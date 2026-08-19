@@ -1,0 +1,28 @@
+.footer {
+  padding: 32px 5vw;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.copyright {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+}

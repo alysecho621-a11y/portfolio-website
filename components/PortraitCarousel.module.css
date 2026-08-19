@@ -1,0 +1,69 @@
+.frame {
+  position: relative;
+  width: 388px;
+  max-width: 100%;
+  height: 481px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.slot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease;
+  background: var(--placeholder-bg);
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 14px;
+  color: var(--text-muted);
+  background-color: var(--placeholder-bg);
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--placeholder-stripe) 0px,
+    var(--placeholder-stripe) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+}
+
+.tapZone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  cursor: pointer;
+  z-index: 4;
+  transition: transform 0.15s ease;
+}
+
+.tapZone:active {
+  transform: scale(0.96);
+}
+
+.dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}

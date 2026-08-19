@@ -1,0 +1,73 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.thumb {
+  overflow: hidden;
+  border-radius: 6px;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  cursor: none;
+}
+
+.thumbImage {
+  transition: transform 0.4s ease;
+}
+
+.thumb:hover .thumbImage {
+  transform: scale(1.06);
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag-teal,
+.tag-orange,
+.tag-outline {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 5px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.tag-teal {
+  color: oklch(38% 0.1 195);
+  background: var(--accent-teal-soft);
+}
+
+.tag-orange {
+  color: var(--accent-orange-text);
+  background: var(--accent-orange-soft);
+}
+
+.tag-outline {
+  color: var(--text-muted);
+  border: 1px solid var(--border-lighter);
+  text-transform: none;
+}
+
+.title {
+  font-family: var(--font-newsreader), serif;
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0;
+  color: var(--text);
+}
+
+.description {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
+}

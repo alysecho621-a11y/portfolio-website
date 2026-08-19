@@ -1,0 +1,78 @@
+.hero {
+  padding: 130px 5vw 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  position: relative;
+  background-color: #fff;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.heroSubtext {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: clamp(17px, 2vw, 18px);
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.heroSubtextInner {
+  font-size: 16px;
+  color: #0000006d;
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.cta {
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  background: var(--text);
+  color: var(--bg);
+  padding: 16px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.work {
+  padding: 20px 5vw 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.workHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.workTitle {
+  font-family: var(--font-newsreader), serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 0;
+  color: var(--text);
+}
+
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 36px;
+  position: relative;
+}

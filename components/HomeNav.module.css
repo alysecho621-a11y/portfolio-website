@@ -1,0 +1,97 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 5vw;
+  background: oklch(98% 0.006 80 / 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: var(--font-newsreader), serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.desktopLinks {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.link {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 15px;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.menuButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-lighter);
+  border-radius: 50%;
+  background: transparent;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.menuBar {
+  width: 16px;
+  height: 1.5px;
+  background: var(--text);
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 66px;
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: none;
+  flex-direction: column;
+  padding: 24px 5vw;
+  gap: 20px;
+  z-index: 49;
+}
+
+.mobileLink {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16px;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.mobileResume {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent-teal);
+  text-decoration: none;
+}
+
+@media (max-width: 759px) {
+  .desktopLinks {
+    display: none;
+  }
+  .menuButton {
+    display: flex;
+  }
+  .mobileMenu {
+    display: flex;
+  }
+}

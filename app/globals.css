@@ -1,0 +1,79 @@
+:root {
+  --bg: oklch(98% 0.006 80);
+  --text: oklch(18% 0.01 80);
+  --text-secondary: oklch(30% 0.01 80);
+  --text-muted: oklch(45% 0.01 80);
+  --text-faint: oklch(35% 0.01 80);
+  --border: oklch(90% 0.006 80);
+  --border-light: oklch(88% 0.006 80);
+  --border-lighter: oklch(85% 0.006 80);
+  --placeholder-bg: oklch(96% 0.006 80);
+  --placeholder-stripe: oklch(93% 0.006 80);
+  --accent-teal: oklch(45% 0.1 195);
+  --accent-teal-hover: oklch(38% 0.1 195);
+  --accent-teal-soft: oklch(45% 0.1 195 / 0.1);
+  --accent-orange-soft: oklch(45% 0.1 70 / 0.12);
+  --accent-orange-text: oklch(38% 0.1 70);
+  --accent-blue: #56b8db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-manrope), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: var(--font-newsreader), serif;
+}
+
+a {
+  color: var(--accent-teal);
+}
+
+a:hover {
+  color: var(--accent-teal-hover);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: oklch(60% 0.006 80);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.placeholder-frame {
+  background-color: var(--placeholder-bg);
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--placeholder-stripe) 0px,
+    var(--placeholder-stripe) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-label {
+  font-family: 'Menlo', monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 16px;
+}
