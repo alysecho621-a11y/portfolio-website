@@ -1,5 +1,5 @@
 .intro {
-  padding: 140px 5vw 100px;
+  padding: 140px 5vw 40px;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -48,7 +48,7 @@
 }
 
 .memoryLaneSection {
-  padding: 25px 5vw 0;
+  padding: 70px 5vw 0;
   max-width: 1200px;
   margin: 0 auto;
 }
