@@ -55,6 +55,14 @@
   margin: 0 0 48px;
 }
 
+.taglinePlain {
+  font-family: var(--font-manrope), sans-serif;
+  font-style: normal;
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: oklch(40% 0.01 80);
+  margin: 0 0 48px;
+}
+
 .metaGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

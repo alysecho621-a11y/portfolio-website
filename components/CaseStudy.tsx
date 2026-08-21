@@ -17,6 +17,7 @@ export type CaseStudyData = {
   coverImage?: string;
   coverImageAlt?: string;
   sideNav?: boolean;
+  taglinePlain?: boolean;
   problem: string;
   process: { text: string; images: PlaceholderImage[] };
   solution: { text: string; images: PlaceholderImage[] };
@@ -43,7 +44,7 @@ export default function CaseStudy({ data }: { data: CaseStudyData }) {
           ))}
         </div>
         <h1 className={styles.title}>{data.title}</h1>
-        <p className={styles.tagline}>{data.tagline}</p>
+        <p className={data.taglinePlain ? styles.taglinePlain : styles.tagline}>{data.tagline}</p>
         <div className={styles.metaGrid}>
           {data.meta.map((item) => (
             <div key={item.label}>

@@ -5,7 +5,9 @@ export const metadata: Metadata = { title: 'DI Circle — Alyse Cho' };
 
 const data: CaseStudyData = {
   title: 'DI Circle',
-  tagline: 'Making professional networking feel human again.',
+  tagline:
+    'Reducing the intimidation of professional networking for DI members through a collaborative, community-first platform',
+  taglinePlain: true,
   tags: [
     { label: '🏆 Audience Choice', variant: 'orange' },
     { label: 'Web', variant: 'teal' },

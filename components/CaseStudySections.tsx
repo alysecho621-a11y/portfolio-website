@@ -81,8 +81,8 @@ export default function CaseStudySections({
                 <span
                   className={styles.dot}
                   style={{
-                    width: isActive ? 11 : 9,
-                    height: isActive ? 11 : 9,
+                    width: isActive ? 14 : 11,
+                    height: isActive ? 14 : 11,
                     background: isActive ? 'oklch(45% 0.1 195)' : 'oklch(55% 0.01 80)',
                   }}
                 />

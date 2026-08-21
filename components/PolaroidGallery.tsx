@@ -45,8 +45,18 @@ const ROW_2: Polaroid[] = [
 const CARD_ROTATE = [-4, 3, -4, 3, -2];
 const CARD_TRANSLATE_Y = [0, 22, 0, 22, 0];
 const PIN_ROTATE = [-2, 3, -3, 2, -2];
+const ROW_1_OFFSET = [0, 0, 0, 0, 0];
+const ROW_2_OFFSET = [-32, -16, 0, 0, 0];
 
-function PolaroidRow({ photos, revealed }: { photos: Polaroid[]; revealed: boolean }) {
+function PolaroidRow({
+  photos,
+  revealed,
+  marginLeft,
+}: {
+  photos: Polaroid[];
+  revealed: boolean;
+  marginLeft: number[];
+}) {
   return (
     <div className={styles.rowWrap}>
       <div className={styles.string} />
@@ -59,6 +69,7 @@ function PolaroidRow({ photos, revealed }: { photos: Polaroid[]; revealed: boole
               opacity: revealed ? 1 : 0,
               transform: `translateX(${revealed ? 0 : -48}px)`,
               transitionDelay: `${i * 90}ms`,
+              marginLeft: marginLeft[i],
             }}
           >
             <div className={styles.pin} style={{ transform: `translateX(-50%) rotate(${PIN_ROTATE[i]}deg)` }} />
@@ -109,7 +120,7 @@ export default function PolaroidGallery() {
   return (
     <section className={styles.section}>
       <div ref={ref} className={styles.stack}>
-        <PolaroidRow photos={ROW_1} revealed={revealed} />
+        <PolaroidRow photos={ROW_1} revealed={revealed} marginLeft={ROW_1_OFFSET} />
         <svg
           viewBox="0 0 1000 60"
           preserveAspectRatio="none"
@@ -118,7 +129,7 @@ export default function PolaroidGallery() {
         >
           <line x1="960" y1="0" x2="40" y2="60" stroke="#8a8378" strokeWidth="2" />
         </svg>
-        <PolaroidRow photos={ROW_2} revealed={revealed} />
+        <PolaroidRow photos={ROW_2} revealed={revealed} marginLeft={ROW_2_OFFSET} />
       </div>
     </section>
   );

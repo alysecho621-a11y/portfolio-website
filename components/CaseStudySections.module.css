@@ -12,15 +12,15 @@
   top: 120px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 34px;
   flex-shrink: 0;
-  width: 200px;
+  width: 220px;
 }
 
 .navLink {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   text-decoration: none;
 }
 
@@ -32,7 +32,7 @@
 
 .navLabel {
   font-family: var(--font-manrope), sans-serif;
-  font-size: 17px;
+  font-size: 19px;
   transition: color 0.25s ease;
   white-space: nowrap;
 }
