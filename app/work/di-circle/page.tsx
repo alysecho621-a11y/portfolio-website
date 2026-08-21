@@ -7,6 +7,7 @@ const data: CaseStudyData = {
   title: 'DI Circle',
   tagline: 'Making professional networking feel human again.',
   tags: [
+    { label: '🏆 Audience Choice', variant: 'orange' },
     { label: 'Web', variant: 'teal' },
     { label: 'Product Design', variant: 'orange' },
     { label: '2025', variant: 'outline' },
@@ -18,6 +19,7 @@ const data: CaseStudyData = {
     { label: 'Tools', value: 'Figma, UserTesting' },
   ],
   coverLabel: '// DI Circle — cover image, desktop homepage',
+  sideNav: true,
   problem:
     'Design Interactive (DI) members told us the same thing over and over: professional networking events felt cold, transactional, and intimidating — especially for people just starting out. Without an easy way to find common ground before showing up, most members avoided events altogether.',
   process: {

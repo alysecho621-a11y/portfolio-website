@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import SecondaryNav from './SecondaryNav';
 import Footer from './Footer';
+import CaseStudySections from './CaseStudySections';
 import styles from './CaseStudy.module.css';
 
 type Tag = { label: string; variant: 'teal' | 'orange' | 'outline' };
@@ -12,6 +14,9 @@ export type CaseStudyData = {
   tags: Tag[];
   meta: MetaItem[];
   coverLabel: string;
+  coverImage?: string;
+  coverImageAlt?: string;
+  sideNav?: boolean;
   problem: string;
   process: { text: string; images: PlaceholderImage[] };
   solution: { text: string; images: PlaceholderImage[] };
@@ -50,56 +55,79 @@ export default function CaseStudy({ data }: { data: CaseStudyData }) {
       </header>
 
       <div className={styles.coverWrap}>
-        <div className={`${styles.cover} placeholder-frame`}>
-          <span className="placeholder-label">{data.coverLabel}</span>
-        </div>
+        {data.coverImage ? (
+          <div className={styles.cover} style={{ position: 'relative' }}>
+            <Image
+              src={data.coverImage}
+              alt={data.coverImageAlt || data.title}
+              fill
+              sizes="(max-width: 1100px) 90vw, 1100px"
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
+        ) : (
+          <div className={`${styles.cover} placeholder-frame`}>
+            <span className="placeholder-label">{data.coverLabel}</span>
+          </div>
+        )}
       </div>
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>The Problem</h2>
-        <p className={styles.sectionText}>{data.problem}</p>
-      </section>
+      {data.sideNav ? (
+        <CaseStudySections
+          problem={data.problem}
+          process={data.process}
+          solution={data.solution}
+          outcome={data.outcome}
+        />
+      ) : (
+        <>
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>The Problem</h2>
+            <p className={styles.sectionText}>{data.problem}</p>
+          </section>
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>The Process</h2>
-        <p className={`${styles.sectionText} ${styles.sectionTextSpaced}`}>
-          {data.process.text}
-        </p>
-        <div className={styles.imageGrid}>
-          {data.process.images.map((img) => (
-            <div
-              key={img.label}
-              className={`${styles.gridImage} placeholder-frame`}
-              style={{ aspectRatio: img.ratio }}
-            >
-              <span className="placeholder-label">{img.label}</span>
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>The Process</h2>
+            <p className={`${styles.sectionText} ${styles.sectionTextSpaced}`}>
+              {data.process.text}
+            </p>
+            <div className={styles.imageGrid}>
+              {data.process.images.map((img) => (
+                <div
+                  key={img.label}
+                  className={`${styles.gridImage} placeholder-frame`}
+                  style={{ aspectRatio: img.ratio }}
+                >
+                  <span className="placeholder-label">{img.label}</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </section>
 
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>The Solution</h2>
-        <p className={`${styles.sectionText} ${styles.sectionTextSpaced}`}>
-          {data.solution.text}
-        </p>
-        <div className={styles.imageGridNarrow}>
-          {data.solution.images.map((img) => (
-            <div
-              key={img.label}
-              className={`${styles.gridImage} placeholder-frame`}
-              style={{ aspectRatio: img.ratio }}
-            >
-              <span className="placeholder-label">{img.label}</span>
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>The Solution</h2>
+            <p className={`${styles.sectionText} ${styles.sectionTextSpaced}`}>
+              {data.solution.text}
+            </p>
+            <div className={styles.imageGridNarrow}>
+              {data.solution.images.map((img) => (
+                <div
+                  key={img.label}
+                  className={`${styles.gridImage} placeholder-frame`}
+                  style={{ aspectRatio: img.ratio }}
+                >
+                  <span className="placeholder-label">{img.label}</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </section>
 
-      <section className={`${styles.section} ${styles.sectionLast}`}>
-        <h2 className={styles.sectionTitle}>Outcome &amp; Reflection</h2>
-        <p className={styles.sectionText}>{data.outcome}</p>
-      </section>
+          <section className={`${styles.section} ${styles.sectionLast}`}>
+            <h2 className={styles.sectionTitle}>Outcome &amp; Reflection</h2>
+            <p className={styles.sectionText}>{data.outcome}</p>
+          </section>
+        </>
+      )}
 
       <div className={styles.nextWrap}>
         <a href={data.nextProject.href} className={styles.nextCard}>

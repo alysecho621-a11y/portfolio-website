@@ -1,0 +1,101 @@
+.layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 5vw;
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.sidebar {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.dot {
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.navLabel {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 17px;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 0 72px;
+}
+
+.sectionLast {
+  padding-bottom: 24px;
+}
+
+.sectionTitle {
+  font-family: var(--font-newsreader), serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(26px, 3.5vw, 34px);
+  margin: 0 0 20px;
+  color: var(--text);
+}
+
+.sectionText {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.sectionTextSpaced {
+  margin: 0 0 32px;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.imageGridNarrow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gridImage {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.imageGrid .gridImage:hover {
+  transform: scale(1.03);
+}
+
+.imageGridNarrow .gridImage:hover {
+  transform: scale(1.04);
+}

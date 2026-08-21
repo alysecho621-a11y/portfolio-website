@@ -74,8 +74,9 @@ export default function Home() {
             image="/images/di-circle-cover.png"
             imageAlt="DI Circle desktop homepage mockup"
             tags={[
+              { label: '🏆 Audience Choice', variant: 'badge' },
               { label: 'Web', variant: 'teal' },
-              { label: 'Product Design', variant: 'orange' },
+              { label: 'Product', variant: 'orange' },
               { label: 'Fall 2025', variant: 'outline' },
             ]}
             title="DI Circle"

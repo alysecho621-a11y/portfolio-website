@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './ProjectCard.module.css';
 
-type Tag = { label: string; variant: 'teal' | 'orange' | 'outline' };
+type Tag = { label: string; variant: 'teal' | 'orange' | 'outline' | 'badge' };
 
 export default function ProjectCard({
   href,
