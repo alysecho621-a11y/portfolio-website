@@ -98,7 +98,7 @@ export default function Home() {
           />
           <ProjectCard
             href="/work/queer-arts-gallery"
-            image="/images/queer-arts-cover.png"
+            image="/images/queer-arts-cover-2.png"
             imageAlt="Queer Arts Gallery sign-in mockup"
             tags={[
               { label: 'Branding', variant: 'teal' },
